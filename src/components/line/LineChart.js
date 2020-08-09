@@ -24,7 +24,8 @@ export const LineChart = () => {
       .y(yScale)
 
     svg
-      .selectAll('.line').data([data])
+      .selectAll('.line')
+      .data([data])
       .join('path')
       .attr('class', 'line')
       .attr('d', value => lineGraph(value))
@@ -34,7 +35,11 @@ export const LineChart = () => {
   return (
     <div>
       <h2>Line Chart Testing</h2>
-      <svg ref={svgRef}>
+      <svg
+        ref={svgRef} style={{
+          width: '100%'
+        }}
+      >
         <g className='x-axis' />
       </svg>
     </div>
