@@ -1,7 +1,7 @@
 import React from 'react'
 import { select, line, axisBottom, scaleLinear } from 'd3'
 
-export const LineChart = () => {
+export const LineChart = ({ contData }) => {
   const [data, setData] = React.useState([10, 50, 30, 40, 20, 70, 50])
   const svgRef = React.useRef()
 
@@ -34,7 +34,6 @@ export const LineChart = () => {
   }, [data])
   return (
     <div>
-      <h2>Line Chart Testing</h2>
       <svg
         ref={svgRef} style={{
           width: '100%'
